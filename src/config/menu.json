@@ -1,0 +1,49 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Contact",
+      "url": "https://contact.venturoustech.com"
+    },
+    {
+      "name": "Services",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "IT Support",
+          "url": "/it-support"
+        },
+        {
+          "name": "Application Development",
+          "url": "/development"
+        },
+        {
+          "name": "AI Solutions",
+          "url": "/ai-solutions"
+        },
+        {
+          "name": "Websites and SEO Optimization",
+          "url": "/web-seo"
+        }
+      ]
+    },
+    {
+      "name": "Articles",
+      "url": "/articles"
+    },
+    {
+      "name": "Team",
+      "url": "/team"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
+    }
+  ]
+}

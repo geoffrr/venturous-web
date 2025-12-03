@@ -1,0 +1,61 @@
+{
+  "site": {
+    "title": "Venturous Technology",
+    "base_url": "https://venturoustech.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.svg",
+    "favicon_darkmode": "/images/favicon.ico",
+    "logo": "/images/logo.png",
+    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_mask": "/images/logo-mask.png",
+    "logo_darkmode_mask": "/images/logo-darkmode-mask.png",
+    "logo_width": "150",
+    "logo_height": "50",
+    "logo_text": "Venturous Technology Ltd."
+  },
+
+  "settings": {
+    "search": true,
+    "sticky_header": true,
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog"
+  },
+
+  "announcement": {
+    "enable": false,
+    "content": "<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "expire_days": 7
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Designed And Developed by Geoff Ramsay @ [Venturous Technology Ltd.](https://venturoustech.com)"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Get Started",
+    "link": "https://contact.venturoustech.com"
+  },
+
+  "google_tag_manager": {
+    "enable": false,
+    "gtm_id": "GTM-XXXXXX"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "venturoustech-website",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Venturous Technology Ltd.",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Venturous Technology Ltd. is a software development company that specializes in building technology and AI solutions for security-critical businesses."
+  }
+}

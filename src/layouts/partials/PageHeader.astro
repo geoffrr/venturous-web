@@ -1,0 +1,17 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { humanize } from "@/lib/utils/textConverter";
+
+const { title = "" }: { title?: string } = Astro.props;
+---
+
+<section>
+  <div class="container text-center">
+    <div
+      class="page-hero mx-auto" style="max-width: 100%; @media (width >= 40rem) { max-width: 40rem; }"
+    >
+      <h1 set:text={humanize(title)} />
+      <Breadcrumbs className="mt-6" />
+    </div>
+  </div>
+</section>
