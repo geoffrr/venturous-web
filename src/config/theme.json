@@ -6,7 +6,11 @@
         "body": "#F4F7FA",
         "border": "#6E7883",
         "light": "#2AAFB0",
-        "dark": "#7B5FA3"
+        "dark": "#7B5FA3",
+        "success": "#48bb78",
+        "warning": "#FFA500",
+        "destructive": "#FF0000",
+        "info": "#0000FF"
       },
       "text_color": {
         "text": "#3A3F45",
@@ -20,7 +24,11 @@
         "body": "#3A3F45",
         "border": "#8B97A5",
         "light": "#7B5FA3",
-        "dark": "#2AAFB0"
+        "dark": "#2AAFB0",
+        "success": "#48bb78",
+        "warning": "#FFA500",
+        "destructive": "#FF0000",
+        "info": "#0000FF"
       },
       "text_color": {
         "text": "#BFD1E7",

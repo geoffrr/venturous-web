@@ -11,6 +11,10 @@
   --color-border: #6E7883;
   --color-light: #2AAFB0;
   --color-dark: #7B5FA3;
+  --color-success: #48bb78;
+  --color-warning: #FFA500;
+  --color-destructive: #FF0000;
+  --color-info: #0000FF;
   --color-text: #3A3F45;
   --color-text-dark: #181A1C;
   --color-text-light: #6E7883;
@@ -21,6 +25,10 @@
   --color-darkmode-border: #8B97A5;
   --color-darkmode-light: #7B5FA3;
   --color-darkmode-dark: #2AAFB0;
+  --color-darkmode-success: #48bb78;
+  --color-darkmode-warning: #FFA500;
+  --color-darkmode-destructive: #FF0000;
+  --color-darkmode-info: #0000FF;
   --color-darkmode-text: #BFD1E7;
   --color-darkmode-text-dark: #F2F8FF;
   --color-darkmode-text-light: #6E7883;

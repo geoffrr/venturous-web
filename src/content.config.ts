@@ -143,6 +143,28 @@ const testimonialSectionCollection = defineCollection({
   }),
 });
 
+// Services collection schema
+const servicesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/services" }),
+  schema: z.object({
+    title: z.string(),
+    teaser: z.string(),
+    "short-content": z.string(),
+    bulletpoints: z.array(z.string()),
+    button: z.object({
+      enable: z.boolean(),
+      label: z.string(),
+      link: z.string(),
+    }),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    date: z.date().optional(),
+    image: z.string().optional(),
+    categories: z.array(z.string()).optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
 // Export collections
 export const collections = {
   // Pages
@@ -152,6 +174,7 @@ export const collections = {
   pages: pagesCollection,
   about: aboutCollection,
   contact: contactCollection,
+  services: servicesCollection,
 
   // sections
   ctaSection: ctaSectionCollection,

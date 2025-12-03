@@ -3,7 +3,7 @@
 banner:
   title: "Secure ***IT and AI Solutions*** for Modern Business"
   content: "Transform your business with enterprise-grade Application and AI solutions, comprehensive cybersecurity, and expert IT support."
-  image: ""
+  image: "Venturous Technology - Logo - colour.png"
   button:
     enable: true
     label: "Get a free consultation"
@@ -36,8 +36,8 @@ features:
       - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
     button:
       enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/astroplate"
+      label: "Let's chat!"
+      link: "https://contact.venturoustech.com"
 
   - title: "The Top Reasons to Choose Astro for Your Next Project"
     image: "/images/service-3.png"
