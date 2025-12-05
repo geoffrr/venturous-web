@@ -6,5 +6,5 @@ description: "Experience the future of AI, web and mobile development with us. B
 button:
   enable: true
   label: "Let's chat!"
-  link: "https://contact.venturoustech.com"
+  link: "https://venturoustech.com/contact"
 ---

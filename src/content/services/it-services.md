@@ -12,7 +12,7 @@ bulletpoints:
 button:
     enable: true
     label: "Get Started Now"
-    link: "https://contact.venturousetech.com"
+    link: "https://venturousetech.com/contact"
 order: 2
 meta_title: "IT Services & Infrastructure Support | Enterprise Cybersecurity & Cloud"
 description: "A summary of Venturous Technology's IT services and infrastructure support capabilities"

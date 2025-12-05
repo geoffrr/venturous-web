@@ -12,7 +12,7 @@ bulletpoints:
 button:
     enable: false
     label: "Get Started Now"
-    link: "https://contact.venturousetech.com"
+    link: "https://venturousetech.com/contact"
 order: 1
 meta_title: "AI Solutions & Automation | Machine Learning & Generative AI Services"
 description: "A summary of Venturous Technology's AI solution capabilities"

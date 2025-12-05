@@ -12,7 +12,7 @@ bulletpoints:
 button:
     enable: true
     label: "Get Started Now"
-    link: "https://contact.venturousetech.com"
+    link: "https://venturousetech.com/contact"
 order: 3
 meta_title: "Compliance & Security Services | HIPAA, ISO, GxP Audits & Testing"
 description: "A summary of Venturous Technology's compliance, testing, and audit capabilities"

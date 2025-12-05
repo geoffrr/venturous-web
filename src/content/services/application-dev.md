@@ -12,7 +12,7 @@ bulletpoints:
 button:
     enable: true
     label: "Get Started Now"
-    link: "https://contact.venturousetech.com"
+    link: "https://venturousetech.com/contact"
 order: 0
 meta_title: "Web & Mobile App Development | Rapid Prototyping & ISO-Compliant Delivery"
 description: "A summary of Venturous Technology's application development capabilities"

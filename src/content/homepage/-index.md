@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: "Get a free consultation"
-    link: "https://contact.venturoustech.com"
+    link: "https://venturoustech.com/contact"
 
 # Features
 features:

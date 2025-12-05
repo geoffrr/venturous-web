@@ -12,7 +12,7 @@ bulletpoints:
 button:
     enable: true
     label: "Get Started Now"
-    link: "https://contact.venturousetech.com"
+    link: "https://venturousetech.com/contact"
 order: 4
 meta_title: "Web Development & SEO Services | Digital Marketing & Google Ads"
 description: "A summary of Venturous Technology's web development, SEO, and digital marketing capabilities"
