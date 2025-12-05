@@ -33,6 +33,7 @@ const teamCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/team" }),
   schema: z.object({
     ...commonFields,
+    region: z.string().optional(),
     social: z
       .array(
         z

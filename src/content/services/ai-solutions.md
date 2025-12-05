@@ -17,7 +17,7 @@ order: 1
 meta_title: "AI Solutions & Automation | Machine Learning & Generative AI Services"
 description: "A summary of Venturous Technology's AI solution capabilities"
 date: 2025-12-04T15:00:00Z
-image: "/images/jo-lin-qQrQcKqLhvs-unsplash.jpg"
+image: "/images/jo-lin-qQrQcKqLhvs-unsplash.png"
 categories: ["Services", "AI"]
 draft: false
 ---

@@ -12,7 +12,7 @@ banner:
 # Features
 features:
   - title: "What we can do for you"
-    image: "/images/service-1.png"
+    image: "/images/web_placeholder_1.png"
     content: "Venturous Technology is a comprehensive partner offering the technical solutions your Healthcare, Legal, Accounting or other business needs to thrive. Instead of multiple vendors, having a single integrated service partner and bundled enterprise-grade solutions packages maximises your benefit with minimal over-head. Here's how we can help:"
     bulletpoints:
       - "Infrastructure **IT support** (cloud, on-premise, and hybrid)"

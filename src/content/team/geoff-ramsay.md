@@ -1,8 +1,9 @@
 ---
 title: Geoff Ramsay
 email: geoff@venturoustech.com
-image: "/images/avatar.png"
-description: this is meta description
+image: "/images/geoff-headshot.png"
+description: "Enterprise Architect, Developer, AI Specialist. Former successful start-up CTO"
+region: "Oakville and Greater Toronto Area"
 order: 0
 social:
   - name: linkedin
@@ -10,4 +11,5 @@ social:
     link: https://linkedin.com/li/geofframsay
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+Consultant, Enterprise Architect, and successful startup CTO for security and compliance-critical organizations.
+My Focus is on rapid and secure development, policy refinement, and supporting clients in the Greater Toronto Area.

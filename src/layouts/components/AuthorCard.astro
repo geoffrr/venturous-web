@@ -4,7 +4,7 @@ import ImageMod from "./ImageMod.astro";
 import Social from "./Social.astro";
 
 const { data } = Astro.props;
-const { title, image, social } = data.data;
+const { title, image, social, description, region } = data.data;
 ---
 
 <div class="card-secondary clip p-8 text-center">
@@ -22,10 +22,17 @@ const { title, image, social } = data.data;
   }
   <h4 class="mb-3">
     <a href={`/team/${data.id}`}>{title}</a>
-  </h4>
-  <p class="mb-4">
-    {plainify(data.body?.slice(0, 100))}
-  </p>
+    </h4>
+    <p class="mb-4">
+      {plainify(description)}
+    </p>
+    {
+      region && (
+        <p class="font-semibold mb-4">
+          {region}
+        </p>
+      )
+    }
   {
     social && social.length > 0 ? (
       <Social source={social} className="social-icons" />
