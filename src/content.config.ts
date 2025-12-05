@@ -34,6 +34,27 @@ const teamCollection = defineCollection({
   schema: z.object({
     ...commonFields,
     region: z.string().optional(),
+    email: z.string().optional(),
+    email_parts: z
+      .object({
+        username: z.string().optional(),
+        domain: z.string().optional(),
+        tld: z.string().optional(),
+      })
+      .optional(),
+    phone: z
+      .object({
+        country: z.string().optional(),
+        area: z.string().optional(),
+        first: z.string().optional(),
+        last: z.string().optional(),
+      })
+      .optional(),
+    location: z.string().optional(),
+    locationFull: z.string().optional(),
+    website: z.string().optional(),
+    company: z.string().optional(),
+    jobTitle: z.string().optional(),
     social: z
       .array(
         z

@@ -1,8 +1,8 @@
 ---
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
-import { getListPage } from "@/lib/contentParser.astro";
-import PageHeader from "@/partials/PageHeader.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import ContactCard from "@/layouts/components/ContactCard.astro";
 
 const contactIndex = await getListPage("contact", "-index");
 const { contact_form_action }: { contact_form_action: string } = config.params;
@@ -11,6 +11,18 @@ const { title, description, meta_title, image } = contactIndex.data;
 if (contactIndex.data.draft) {
   return Astro.redirect("/404");
 }
+
+// Get team members and find the first ordered contact
+const team = await getSinglePage("team");
+const sortedTeam = team
+  .slice() // avoid mutating the original array
+  .sort((a, b) => {
+    const aOrder = typeof a.data.order === "number" ? a.data.order : Number.POSITIVE_INFINITY;
+    const bOrder = typeof b.data.order === "number" ? b.data.order : Number.POSITIVE_INFINITY;
+    return aOrder - bOrder;
+  });
+
+const firstContact = sortedTeam[0];
 ---
 
 <Base
@@ -19,54 +31,10 @@ if (contactIndex.data.draft) {
   description={description}
   image={image}
 >
-  <PageHeader title={title} />
   <section class="section-sm">
     <div class="container">
-      <div class="row">
-        <div class="mx-auto md:col-10 lg:col-6">
-          <form action={contact_form_action} method="POST">
-            <div class="mb-6">
-              <label for="name" class="form-label">
-                Full Name <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="John Doe"
-                type="text"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="email" class="form-label">
-                Working Mail <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="john.doe@email.com"
-                type="email"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="message" class="form-label">
-                Anything else? <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-input"
-                placeholder="Message goes here..."
-                required
-                rows="8"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>
+      <p class="text-center text-lg font-bold mb-2">We're available to work with you, please reach out today!</p>
+      <ContactCard data={firstContact} />
     </div>
   </section>
 </Base>

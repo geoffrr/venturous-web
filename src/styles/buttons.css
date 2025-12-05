@@ -16,6 +16,15 @@
   background: linear-gradient(150deg, var(--color-darkmode-primary) 0%, var(--color-darkmode-primary) 50%, var(--color-darkmode-light) 100%);
 }
 
+.btn-secondary {
+  @apply dark:text-white text-white px-8 rounded-none border-none relative overflow-hidden;
+  background: linear-gradient(150deg, var(--color-primary-dim) 0%, var(--color-light) 100%);
+}
+
+.dark .btn-secondary {
+  background: linear-gradient(150deg, var(--color-darkmode-primary-dim) 0%, var(--color-darkmode-light) 100%);
+}
+
 .btn-primary > * {
   position: relative;
   z-index: 2;
@@ -91,4 +100,28 @@
 
 .dark .btn-outline-primary:hover::before {
   background: transparent;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(150deg, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-light) 100%);
+}
+
+.dark .btn-secondary:hover {
+  background: linear-gradient(150deg, var(--color-darkmode-primary) 0%, var(--color-darkmode-primary) 50%, var(--color-darkmode-light) 100%);
+}
+
+.secondary-gradient {
+  background: linear-gradient(150deg, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-light) 100%);
+}
+
+.dark .secondary-gradient {
+  background: linear-gradient(150deg, var(--color-darkmode-primary) 0%, var(--color-darkmode-primary) 50%, var(--color-darkmode-light) 100%);
+}
+
+.hover-secondary-gradient:hover {
+  background: linear-gradient(150deg, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-light) 100%);
+}
+
+.dark .hover-secondary-gradient:hover {
+  background: linear-gradient(150deg, var(--color-darkmode-primary) 0%, var(--color-darkmode-primary) 50%, var(--color-darkmode-light) 100%);
 }
