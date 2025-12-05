@@ -27,7 +27,7 @@
 
   "announcement": {
     "enable": false,
-    "content": "<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "content": "<span class='text-center block'>Have a bold idea? Let's chat and make it happen! <a class='underline' href='https://contact.venturoustech.com/' target='_blank' rel='noopener'>You can contact us here</a></span>",
     "expire_days": 7
   },
 
@@ -44,7 +44,7 @@
 
   "google_tag_manager": {
     "enable": false,
-    "gtm_id": "GTM-XXXXXX"
+    "gtm_id": "GTM-W8RSH5PL"
   },
 
   "disqus": {

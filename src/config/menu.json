@@ -15,19 +15,23 @@
       "children": [
         {
           "name": "IT Support",
-          "url": "/it-support"
+          "url": "/services/it-services"
         },
         {
           "name": "Application Development",
-          "url": "/development"
+          "url": "/services/application-dev"
         },
         {
           "name": "AI Solutions",
-          "url": "/ai-solutions"
+          "url": "/services/ai-solutions"
         },
         {
           "name": "Websites and SEO Optimization",
-          "url": "/web-seo"
+          "url": "/services/web-seo"
+        },
+        {
+          "name": "Compliance and Security",
+          "url": "/services/compliance-security"
         }
       ]
     },

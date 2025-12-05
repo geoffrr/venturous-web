@@ -1,0 +1,31 @@
+---
+import Base from "@/layouts/Base.astro";
+import ServiceSingle from "@/layouts/ServiceSingle.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+
+export async function getStaticPaths() {
+  const SERVICES_FOLDER = "services";
+  const services = await getSinglePage(SERVICES_FOLDER);
+
+  const paths = services.map((service) => ({
+    params: {
+      single: service.id,
+    },
+    props: { service },
+  }));
+  return paths;
+}
+
+const { service } = Astro.props;
+const { title, meta_title, description, image } = service.data;
+---
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+  <ServiceSingle service={service} />
+</Base>
+

@@ -7,7 +7,7 @@ const { data } = Astro.props;
 const { title, image, social } = data.data;
 ---
 
-<div class="rounded bg-light p-8 text-center dark:bg-darkmode-light">
+<div class="card-secondary clip p-8 text-center">
   {
     image && (
       <ImageMod
@@ -26,5 +26,11 @@ const { title, image, social } = data.data;
   <p class="mb-4">
     {plainify(data.body?.slice(0, 100))}
   </p>
-  <Social source={social} className="social-icons" />
+  {
+    social && social.length > 0 ? (
+      <Social source={social} className="social-icons" />
+    ) : (
+      <div class="h-9"></div>
+    )
+  }
 </div>

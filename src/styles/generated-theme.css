@@ -7,10 +7,19 @@
 @theme {
   /* === Colors === */
   --color-primary: #3B8FBF;
+  --color-primary-dim: #AACEE3;
+  --color-primary-dimmer: #CEE2EE;
+  --color-primary-bg: #D0E2EE;
   --color-body: #F4F7FA;
   --color-border: #6E7883;
   --color-light: #2AAFB0;
+  --color-light-dim: #A3DCDD;
+  --color-light-dimmer: #C5E6E8;
+  --color-light-bg: #D6ECEF;
   --color-dark: #7B5FA3;
+  --color-dark-dim: #C1B8D4;
+  --color-dark-dimmer: #D3CEE2;
+  --color-dark-bg: #DBD9E8;
   --color-success: #48bb78;
   --color-warning: #FFA500;
   --color-destructive: #FF0000;
@@ -21,10 +30,19 @@
 
   /* === Darkmode Colors === */
   --color-darkmode-primary: #3B8FBF;
+  --color-darkmode-primary-dim: #3A6E8E;
+  --color-darkmode-primary-dimmer: #3B5C70;
+  --color-darkmode-primary-bg: #D0E2EE;
   --color-darkmode-body: #3A3F45;
   --color-darkmode-border: #8B97A5;
   --color-darkmode-light: #7B5FA3;
+  --color-darkmode-light-bg: #DBD9E8;
+  --color-darkmode-light-dim: #61527D;
+  --color-darkmode-light-dimmer: #504A65;
   --color-darkmode-dark: #2AAFB0;
+  --color-darkmode-dark-bg: #D6ECEF;
+  --color-darkmode-dark-dim: #308185;
+  --color-darkmode-dark-dimmer: #356569;
   --color-darkmode-success: #48bb78;
   --color-darkmode-warning: #FFA500;
   --color-darkmode-destructive: #FF0000;

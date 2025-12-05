@@ -32,7 +32,7 @@ export const markdownifyWithGradient = (content: string, div?: boolean) => {
   
   const processedContent = content.replace(gradientPattern, (match, text) => {
     const escapedText = escapeHtml(text.trim());
-    return `<span class="inline bg-gradient-to-r from-light via-primary to-dark bg-clip-text text-transparent">${escapedText}</span>`;
+    return `<span class="gradient-text">${escapedText}</span>`;
   });
   
   // Convert markdown to HTML (the HTML spans will be preserved)

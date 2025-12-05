@@ -6,13 +6,21 @@ import { markdownify, markdownifyWithGradient } from "@/lib/utils/textConverter"
 import CallToAction from "@/partials/CallToAction.astro";
 import Testimonial from "@/partials/Testimonial.astro";
 import ServicesCarousel from "@/partials/ServicesCarousel.astro";
-import { FaCheck } from "react-icons/fa";
-import type { CollectionEntry } from "astro:content";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 const homepage = await getListPage("homepage", "-index");
 const call_to_action = await getListPage("ctaSection", "call-to-action");
 const testimonial = await getListPage("testimonialSection", "testimonial");
-const services = await getSinglePage("services");
+const servicesUnsorted = await getSinglePage("services");
+// Sort services by order field, then by ID as fallback
+const services = servicesUnsorted.sort((a, b) => {
+  const orderA = a.data.order ?? 999;
+  const orderB = b.data.order ?? 999;
+  if (orderA !== orderB) {
+    return orderA - orderB;
+  }
+  return a.id.localeCompare(b.id);
+});
 
 const { banner, features } = homepage.data;
 ---
@@ -22,7 +30,7 @@ const { banner, features } = homepage.data;
   <section class="section pt-14">
     <div class="container">
       <div class="row justify-center">
-        <div class="lg:col-7 md:col-9 mb-8 text-center">
+        <div class="lg:col-7 md:col-9 mb-4 text-center">
           <h1
             set:html={markdownifyWithGradient(banner.title)}
             class="mb-4 text-h3 lg:text-h1"
@@ -44,7 +52,7 @@ const { banner, features } = homepage.data;
           }
         </div>
         {
-          banner.image && (
+          banner.image && banner.image !== '' && (
             <div class="col-12">
               <ImageMod
                 src={banner.image}
@@ -68,24 +76,27 @@ const { banner, features } = homepage.data;
       <section class={`section-sm ${index % 2 === 0 && "bg-gradient"}`}>
         <div class="container">
           <div class="row items-center justify-between">
-            <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
-            >
-              <ImageMod
-                src={feature.image}
-                height={480}
-                width={520}
-                alt={feature.title}
-                format="webp"
-              />
-            </div>
+            {feature.image && (
+              <div
+                class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
+              >
+                <ImageMod
+                  src={feature.image}
+                  height={480}
+                  width={520}
+                  alt={feature.title}
+                  format="webp"
+                />
+              </div>
+            )}
             <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
               <h2 set:html={markdownifyWithGradient(feature.title)} class="mb-4" />
-              <p set:html={markdownify(feature.content)} class="mb-8 text-lg" />
+              <p set:html={markdownify(feature.content)} class="mb-4 text-lg" />
               <ul>
                 {feature.bulletpoints.map((bullet: string) => (
-                  <li class="relative mb-4 pl-6">
-                    <FaCheck className={"absolute left-0 top-1.5"} />
+                  <li class="relative mb-4 pl-0 items-center justify-center">
+                  <MdOutlineDoubleArrow className="inline-block pl-0 text-primary text-lg" />
+                  {/* <FaCheck className={"absolute left-0 top-1.5"} /> */}
                     <span set:html={markdownify(bullet)} />
                   </li>
                 ))}

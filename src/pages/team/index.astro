@@ -19,11 +19,18 @@ const team = await getSinglePage("team");
     <div class="container">
       <div class="row justify-center">
         {
-          team.map((member) => (
-            <div class="mb-14 md:col-6 lg:col-4">
-              <AuthorCard data={member} />
-            </div>
-          ))
+          team
+            .slice() // avoid mutating the original array
+            .sort((a, b) => {
+              const aOrder = typeof a.data.order === "number" ? a.data.order : Number.POSITIVE_INFINITY;
+              const bOrder = typeof b.data.order === "number" ? b.data.order : Number.POSITIVE_INFINITY;
+              return aOrder - bOrder;
+            })
+            .map((member) => (
+              <div class="mb-14 w-[80%] md:col-4 lg:col-4">
+                <AuthorCard data={member} />
+              </div>
+            ))
         }
       </div>
     </div>

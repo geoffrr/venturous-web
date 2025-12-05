@@ -11,7 +11,7 @@ export interface ISocial {
 
 <ul class={className}>
   {
-    source.map((social: ISocial) => (
+    source && source.map((social: ISocial) => (
       <li>
         <a
           aria-label={social.name}

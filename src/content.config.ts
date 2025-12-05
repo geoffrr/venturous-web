@@ -5,6 +5,7 @@ const commonFields = {
   title: z.string(),
   description: z.string(),
   meta_title: z.string().optional(),
+  order: z.number().optional(),
   date: z.date().optional(),
   image: z.string().optional(),
   draft: z.boolean(),
@@ -80,7 +81,7 @@ const homepageCollection = defineCollection({
     banner: z.object({
       title: z.string(),
       content: z.string(),
-      image: z.string(),
+      image: z.string().optional(),
       button: z.object({
         enable: z.boolean(),
         label: z.string(),
@@ -90,7 +91,7 @@ const homepageCollection = defineCollection({
     features: z.array(
       z.object({
         title: z.string(),
-        image: z.string(),
+        image: z.string().optional(),
         content: z.string(),
         bulletpoints: z.array(z.string()),
         button: z.object({
@@ -156,6 +157,7 @@ const servicesCollection = defineCollection({
       label: z.string(),
       link: z.string(),
     }),
+    order: z.number().optional(),
     meta_title: z.string().optional(),
     description: z.string().optional(),
     date: z.date().optional(),

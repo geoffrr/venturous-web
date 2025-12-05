@@ -3,6 +3,7 @@ title: Geoff Ramsay
 email: geoff@venturoustech.com
 image: "/images/avatar.png"
 description: this is meta description
+order: 0
 social:
   - name: linkedin
     icon: FaLinkedin
