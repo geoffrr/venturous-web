@@ -22,22 +22,16 @@ const { title, image, social, description, region } = data.data;
   }
   <h4 class="mb-3">
     <a href={`/team/${data.id}`}>{title}</a>
-    </h4>
-    <p class="mb-4">
-      {plainify(description)}
-    </p>
-    {
-      region && (
-        <p class="font-semibold mb-4">
-          {region}
-        </p>
-      )
-    }
+  </h4>
+  <p class="mb-4">
+    {plainify(description)}
+  </p>
+  {region && <p class="font-semibold mb-4">{region}</p>}
   {
     social && social.length > 0 ? (
       <Social source={social} className="social-icons" />
     ) : (
-      <div class="h-9"></div>
+      <div class="h-9" />
     )
   }
 </div>

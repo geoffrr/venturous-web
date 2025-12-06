@@ -29,14 +29,16 @@ export const markdownifyWithGradient = (content: string, div?: boolean) => {
   // Find all ***text*** patterns and replace with HTML spans directly
   // Markdown will preserve raw HTML, so we can insert it before processing
   const gradientPattern = /\*\*\*([^*]+)\*\*\*/g;
-  
+
   const processedContent = content.replace(gradientPattern, (match, text) => {
     const escapedText = escapeHtml(text.trim());
     return `<span class="gradient-text">${escapedText}</span>`;
   });
-  
+
   // Convert markdown to HTML (the HTML spans will be preserved)
-  return div ? marked.parse(processedContent) : marked.parseInline(processedContent);
+  return div
+    ? marked.parse(processedContent)
+    : marked.parseInline(processedContent);
 };
 
 // humanize

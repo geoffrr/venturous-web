@@ -22,8 +22,14 @@ const team = await getSinglePage("team");
           team
             .slice() // avoid mutating the original array
             .sort((a, b) => {
-              const aOrder = typeof a.data.order === "number" ? a.data.order : Number.POSITIVE_INFINITY;
-              const bOrder = typeof b.data.order === "number" ? b.data.order : Number.POSITIVE_INFINITY;
+              const aOrder =
+                typeof a.data.order === "number"
+                  ? a.data.order
+                  : Number.POSITIVE_INFINITY;
+              const bOrder =
+                typeof b.data.order === "number"
+                  ? b.data.order
+                  : Number.POSITIVE_INFINITY;
               return aOrder - bOrder;
             })
             .map((member) => (

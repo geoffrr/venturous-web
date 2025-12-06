@@ -22,36 +22,47 @@ const { title, description, image, bulletpoints, button } = service.data;
       <article class="lg:col-10">
         <h1 set:html={markdownify(title)} class="h2 mb-4" />
         <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:gap-4">
-          {image && (
-            <div class="w-4/5 mx-auto flex-shrink-0 lg:w-7/12">
-              <div class="relative w-full aspect-video rounded overflow-hidden">
-                <ImageMod
-                  src={image}
-                  alt={title}
-                  class="absolute inset-0 h-full w-full object-cover rounded"
-                  format="webp"
-                  width={600}
-                  height={338}
-                />
+          {
+            image && (
+              <div class="w-4/5 mx-auto flex-shrink-0 lg:w-7/12">
+                <div class="relative w-full aspect-video rounded overflow-hidden">
+                  <ImageMod
+                    src={image}
+                    alt={title}
+                    class="absolute inset-0 h-full w-full object-cover rounded"
+                    format="webp"
+                    width={600}
+                    height={338}
+                  />
+                </div>
               </div>
-            </div>
-          )}
-          {bulletpoints && bulletpoints.length > 0 && (
-            <ul class="hidden lg:block mb-0 lg:mb-0 flex-1 lg:w-5/12">
-              {bulletpoints.map((bullet: string) => (
-                <li class="mb-3 flex items-center gap-2">
-                  <MdOutlineDoubleArrow className="mt-1 text-primary text-lg flex-shrink-0" />
-                  <span class="gradient-text font-semibold whitespace-nowrap h5" set:html={markdownify(bullet)} />
-                </li>
-              ))}
-            </ul>
-          )}
+            )
+          }
+          {
+            bulletpoints && bulletpoints.length > 0 && (
+              <ul class="hidden lg:block mb-0 lg:mb-0 flex-1 lg:w-5/12">
+                {bulletpoints.map((bullet: string) => (
+                  <li class="mb-3 flex items-center gap-2">
+                    <MdOutlineDoubleArrow className="mt-1 text-primary text-lg flex-shrink-0" />
+                    <span
+                      class="gradient-text font-semibold whitespace-nowrap h5"
+                      set:html={markdownify(bullet)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )
+          }
         </div>
         <div class="content mb-10">
           <Content />
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start justify-between w-full gap-8">
-          <div class="flex items-center justify-center md:justify-start mx-auto md:mx-0 md:flex-1">
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start justify-between w-full gap-8"
+        >
+          <div
+            class="flex items-center justify-center md:justify-start mx-auto md:mx-0 md:flex-1"
+          >
             <h5 class="mr-3">Share :</h5>
             <Share
               className="social-icons"
@@ -60,11 +71,13 @@ const { title, description, image, bulletpoints, button } = service.data;
               slug={service.id}
             />
           </div>
-          {button.enable && (
-            <a class="btn btn-primary w-auto px-8" href={button.link}>
-              {button.label}
-            </a>
-          )}
+          {
+            button.enable && (
+              <a class="btn btn-primary w-auto px-8" href={button.link}>
+                {button.label}
+              </a>
+            )
+          }
         </div>
       </article>
     </div>
@@ -73,4 +86,3 @@ const { title, description, image, bulletpoints, button } = service.data;
     <ServicesCarousel services={services} />
   </div>
 </section>
-

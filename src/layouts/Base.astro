@@ -56,8 +56,12 @@ const { title, meta_title, description, image, noindex, canonical } =
       )
     }
     <!-- favicon -->
-    <link rel="shortcut icon" href={config.site.favicon}/>
-    <link rel="shortcut icon" href={config.site.favicon_darkmode} media="(prefers-color-scheme: dark)" />
+    <link rel="shortcut icon" href={config.site.favicon} />
+    <link
+      rel="shortcut icon"
+      href={config.site.favicon_darkmode}
+      media="(prefers-color-scheme: dark)"
+    />
     <!-- theme meta -->
     <meta name="theme-name" content="astroplate" />
     <meta name="msapplication-TileColor" content="#000000" />
@@ -119,7 +123,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
 
@@ -132,7 +136,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       property="og:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
+        meta_title ? meta_title : title ? title : config.site.title,
       )}
     />
 
@@ -140,7 +144,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       property="og:description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
     <meta property="og:type" content="website" />
@@ -153,7 +157,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="twitter:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title
+        meta_title ? meta_title : title ? title : config.site.title,
       )}
     />
 
@@ -161,7 +165,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="twitter:description"
       content={plainify(
-        description ? description : config.metadata.meta_description
+        description ? description : config.metadata.meta_description,
       )}
     />
 

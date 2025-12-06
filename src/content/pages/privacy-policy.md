@@ -47,9 +47,9 @@ As part of hosting and operating applications for our clients, we may store indi
 
 When visiting our website, we may automatically collect the following information:
 
-1) Technical information, including the internet protocol (IP) address, internet domain names, the web browser and operating system used to access Venturous Technology's website, client support and to collect aggregate information for internal reporting purposes
+1. Technical information, including the internet protocol (IP) address, internet domain names, the web browser and operating system used to access Venturous Technology's website, client support and to collect aggregate information for internal reporting purposes
 
-2) Information about an individual visit to the site, including the full URL, any products viewed or searched for, the files visited, the time spent in each file and the time and date of each visit.
+2. Information about an individual visit to the site, including the full URL, any products viewed or searched for, the files visited, the time spent in each file and the time and date of each visit.
 
 This is required in improving the stability and functionality of our website. The data will not be passed on or used in any other way. However, we reserve the right to check the server log files subsequently, if there are any concrete indications of illegal use.
 

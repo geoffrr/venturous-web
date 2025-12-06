@@ -14,13 +14,16 @@ const similarItems = (currentItem: any, allItems: any[]) => {
   }
 
   // filter by categories
-  const filterByCategories = allItems.filter((item: any) =>
-    item.data.categories && categories.find((category) => item.data.categories.includes(category)),
+  const filterByCategories = allItems.filter(
+    (item: any) =>
+      item.data.categories &&
+      categories.find((category) => item.data.categories.includes(category)),
   );
 
   // filter by tags
-  const filterByTags = allItems.filter((item: any) =>
-    item.data.tags && tags.find((tag) => item.data.tags.includes(tag)),
+  const filterByTags = allItems.filter(
+    (item: any) =>
+      item.data.tags && tags.find((tag) => item.data.tags.includes(tag)),
   );
 
   // merged after filter

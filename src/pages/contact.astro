@@ -17,8 +17,14 @@ const team = await getSinglePage("team");
 const sortedTeam = team
   .slice() // avoid mutating the original array
   .sort((a, b) => {
-    const aOrder = typeof a.data.order === "number" ? a.data.order : Number.POSITIVE_INFINITY;
-    const bOrder = typeof b.data.order === "number" ? b.data.order : Number.POSITIVE_INFINITY;
+    const aOrder =
+      typeof a.data.order === "number"
+        ? a.data.order
+        : Number.POSITIVE_INFINITY;
+    const bOrder =
+      typeof b.data.order === "number"
+        ? b.data.order
+        : Number.POSITIVE_INFINITY;
     return aOrder - bOrder;
   });
 
@@ -33,7 +39,9 @@ const firstContact = sortedTeam[0];
 >
   <section class="section-sm">
     <div class="container">
-      <p class="text-center text-lg font-bold mb-2">We're available to work with you, please reach out today!</p>
+      <p class="text-center text-lg font-bold mb-2">
+        We're available to work with you, please reach out today!
+      </p>
       <ContactCard data={firstContact} />
     </div>
   </section>

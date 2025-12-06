@@ -2,8 +2,11 @@
 import config from "@/config/config.json";
 import ImageMod from "./ImageMod.astro";
 
-const { src, srcDarkmode, useMask }: { src?: string; srcDarkmode?: string; useMask?: boolean } =
-  Astro.props;
+const {
+  src,
+  srcDarkmode,
+  useMask,
+}: { src?: string; srcDarkmode?: string; useMask?: boolean } = Astro.props;
 const {
   logo,
   logo_darkmode,

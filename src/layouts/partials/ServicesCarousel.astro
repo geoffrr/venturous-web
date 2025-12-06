@@ -16,96 +16,103 @@ const servicesArray = services || [];
     <section class="section">
       <div class="mx-auto max-w-4xl">
         <div class="services-carousel-container">
-          <button class="services-nav-arrow services-nav-left" aria-label="Previous service">
-          ‹
+          <button
+            class="services-nav-arrow services-nav-left"
+            aria-label="Previous service"
+          >
+            ‹
           </button>
           <div class="services-carousel-track">
-          {servicesArray.map((service, index) => {
+            {servicesArray.map((service, index) => {
               // Set initial classes to prevent teleport
               let initialClass = "hidden";
               if (index === 0) initialClass = "center";
               else if (index === 1) initialClass = "right-1";
               else if (index === 2) initialClass = "right-2";
-              else if (index === servicesArray.length - 1) initialClass = "left-1";
-              else if (index === servicesArray.length - 2) initialClass = "left-2";
-              
+              else if (index === servicesArray.length - 1)
+                initialClass = "left-1";
+              else if (index === servicesArray.length - 2)
+                initialClass = "left-2";
+
               // Cycle through gradient patterns: 0=primary-primary-dark, 1=dark-dark-primary, 2=primary-primary-light, 3=light-light-dark
               const gradientIndex = index % 5;
               const gradientClasses = [
-              "card-gradient-1", // primary-primary-dark
-              "card-gradient-2", // dark-dark-primary
-              "card-gradient-3", // primary-primary-light
-              "card-gradient-5", // dark-dark-light
-              "card-gradient-4", // light-light-dark
+                "card-gradient-1", // primary-primary-dark
+                "card-gradient-2", // dark-dark-primary
+                "card-gradient-3", // primary-primary-light
+                "card-gradient-5", // dark-dark-light
+                "card-gradient-4", // light-light-dark
               ];
-              
+
               // Construct service URL from service ID
               // Service ID is the filename without extension (e.g., "ai-solutions" from "ai-solutions.md")
               // Following the articles pattern: /services/[single]
               const serviceUrl = `/services/${service.id}`;
-              
+
               return (
-              <div
-              class={`services-card ${initialClass}`}
-              data-index={index}
-              data-service-id={`service-${index}`}
-              data-service-url={serviceUrl}
-              >
-              <div class={`card ${gradientClasses[gradientIndex]} text-text-dark clip px-6 py-6 h-full`}>
-                  {service.data.image && (
-                  <div class="mb-4 aspect-video w-full overflow-hidden clip bg-gray-200 dark:bg-gray-800">
-                      <ImageMod
-                      src={service.data.image}
-                      height={400}
-                      width={800}
-                      alt={service.data.teaser}
-                      format="webp"
-                      class="h-full w-full object-cover"
-                      style="object-fit: cover; object-position: center; min-height: 100%; min-width: 100%;"
-                      />
-                  </div>
-                  )}
-                  <p
-                  set:text={service.data.teaser}
-                  class="h4 mb-2 font-primary font-semibold text-center text-text-dark dark:text-darkmode-text-dark"
-                  />
-                  {/* <p
+                <div
+                  class={`services-card ${initialClass}`}
+                  data-index={index}
+                  data-service-id={`service-${index}`}
+                  data-service-url={serviceUrl}
+                >
+                  <div
+                    class={`card ${gradientClasses[gradientIndex]} text-text-dark clip px-6 py-6 h-full`}
+                  >
+                    {service.data.image && (
+                      <div class="mb-4 aspect-video w-full overflow-hidden clip bg-gray-200 dark:bg-gray-800">
+                        <ImageMod
+                          src={service.data.image}
+                          height={400}
+                          width={800}
+                          alt={service.data.teaser}
+                          format="webp"
+                          class="h-full w-full object-cover"
+                          style="object-fit: cover; object-position: center; min-height: 100%; min-width: 100%;"
+                        />
+                      </div>
+                    )}
+                    <p
+                      set:text={service.data.teaser}
+                      class="h4 mb-2 font-primary font-semibold text-center text-text-dark dark:text-darkmode-text-dark"
+                    />
+                    {/* <p
                   set:html={markdownify(service.data["short-content"])}
                   class="mb-6 text-sm md:text-base"
                   /> */}
-                  <ul class="ml-0 md:ml-4">
-                  {service.data.bulletpoints.slice(0, 3).map((bullet: string) => (
-                      <li class="relative text-base md:text-large mb-3 pl-6 font-semibold text-text dark:text-darkmode-text">
-                      <FaRegCircleCheck className={"mr-0.5 absolute text-success left-0 top-1.5"} />
-                      <span set:html={markdownify(bullet)} />
-                      </li>
-                  ))}
-                  </ul>
-                  {service.data.button?.enable && (
-                  <a
-                      class="btn btn-primary mt-6"
-                      href={service.data.button.link}
-                  >
-                      {service.data.button.label}
-                  </a>
-                  )}
-              </div>
-              </div>
+                    <ul class="ml-0 md:ml-4">
+                      {service.data.bulletpoints
+                        .slice(0, 3)
+                        .map((bullet: string) => (
+                          <li class="relative text-base md:text-large mb-3 pl-6 font-semibold text-text dark:text-darkmode-text">
+                            <FaRegCircleCheck
+                              className={
+                                "mr-0.5 absolute text-success left-0 top-1.5"
+                              }
+                            />
+                            <span set:html={markdownify(bullet)} />
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
               );
-          })}
+            })}
           </div>
-            <button class="services-nav-arrow services-nav-right" aria-label="Next service">
+          <button
+            class="services-nav-arrow services-nav-right"
+            aria-label="Next service"
+          >
             ›
-            </button>
-          </div>
-          <div class="services-dots mt-12">
-              {servicesArray.map((_, index) => (
-              <div
-                  class={`services-dot ${index === 0 ? "active" : ""}`}
-                  data-index={index}
-              ></div>
-              ))}
-          </div>
+          </button>
+        </div>
+        <div class="services-dots mt-12">
+          {servicesArray.map((_, index) => (
+            <div
+              class={`services-dot ${index === 0 ? "active" : ""}`}
+              data-index={index}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -136,14 +143,14 @@ const servicesArray = services || [];
     position: absolute;
     width: 360px;
     height: 400px;
-	transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transform: scale(0.8) translateZ(-300px);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
-  
+
   .services-card.center,
   .services-card.left-1,
   .services-card.left-2,
@@ -151,21 +158,25 @@ const servicesArray = services || [];
   .services-card.right-2 {
     opacity: 1;
   }
-  
+
   .services-card.center {
     filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.1));
   }
-  
+
   .dark .services-card {
     /* filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2)); */
-    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3))
+      drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
   }
-  
+
   .dark .services-card.center {
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4))
+      drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
   }
-  
-  .services-card:not(.hidden):not(.center):not(.left-1):not(.left-2):not(.right-1):not(.right-2) {
+
+  .services-card:not(.hidden):not(.center):not(.left-1):not(.left-2):not(
+      .right-1
+    ):not(.right-2) {
     opacity: 0;
     pointer-events: none;
   }
@@ -209,23 +220,23 @@ const servicesArray = services || [];
     pointer-events: auto;
   }
 
-    /* Gradient variations for cards - cycling through different color combinations */
-    .card-gradient-1 {
+  /* Gradient variations for cards - cycling through different color combinations */
+  .card-gradient-1 {
     background: linear-gradient(
       150deg,
       var(--color-primary-dimmer) 0%,
       var(--color-primary-dimmer) 60%,
       var(--color-dark-dim) 100%
     ) !important;
-  .dark & {
-    background: linear-gradient(
-      150deg,
-      var(--color-darkmode-primary-dim) 0%,
-      var(--color-darkmode-primary-dimmer) 60%,
-      var(--color-darkmode-dark-dimmer) 100%
-    ) !important;
+    .dark & {
+      background: linear-gradient(
+        150deg,
+        var(--color-darkmode-primary-dim) 0%,
+        var(--color-darkmode-primary-dimmer) 60%,
+        var(--color-darkmode-dark-dimmer) 100%
+      ) !important;
+    }
   }
-}
 
   .card-gradient-2 {
     background: linear-gradient(
@@ -234,15 +245,15 @@ const servicesArray = services || [];
       var(--color-dark-dimmer) 60%,
       var(--color-primary-dim) 100%
     ) !important;
-  .dark & {
-    background: linear-gradient(
-      150deg,
-      var(--color-darkmode-dark-dim) 0%,
-      var(--color-darkmode-dark-dimmer) 60%,
-      var(--color-darkmode-primary-dimmer) 100%
-    ) !important;
+    .dark & {
+      background: linear-gradient(
+        150deg,
+        var(--color-darkmode-dark-dim) 0%,
+        var(--color-darkmode-dark-dimmer) 60%,
+        var(--color-darkmode-primary-dimmer) 100%
+      ) !important;
+    }
   }
-}
 
   .card-gradient-3 {
     background: linear-gradient(
@@ -251,15 +262,15 @@ const servicesArray = services || [];
       var(--color-primary-dimmer) 60%,
       var(--color-light-dim) 100%
     ) !important;
-  .dark & {
-    background: linear-gradient(
-      150deg,
-      var(--color-darkmode-primary-dim) 0%,
-      var(--color-darkmode-primary-dimmer) 60%,
-      var(--color-darkmode-light-dimmer) 100%
-    ) !important;
+    .dark & {
+      background: linear-gradient(
+        150deg,
+        var(--color-darkmode-primary-dim) 0%,
+        var(--color-darkmode-primary-dimmer) 60%,
+        var(--color-darkmode-light-dimmer) 100%
+      ) !important;
+    }
   }
-}
 
   .card-gradient-4 {
     background: linear-gradient(
@@ -269,14 +280,14 @@ const servicesArray = services || [];
       var(--color-dark-dim) 100%
     ) !important;
     .dark & {
-    background: linear-gradient(
-      150deg,
-      var(--color-darkmode-light-dim) 0%,
-      var(--color-darkmode-light-dimmer) 60%,
-      var(--color-darkmode-dark-dimmer) 100%
-    ) !important;
+      background: linear-gradient(
+        150deg,
+        var(--color-darkmode-light-dim) 0%,
+        var(--color-darkmode-light-dimmer) 60%,
+        var(--color-darkmode-dark-dimmer) 100%
+      ) !important;
+    }
   }
-}
 
   .card-gradient-5 {
     background: linear-gradient(
@@ -286,22 +297,22 @@ const servicesArray = services || [];
       var(--color-light-dim) 100%
     ) !important;
     .dark & {
-        background: linear-gradient(
+      background: linear-gradient(
         150deg,
         var(--color-darkmode-dark-dim) 0%,
         var(--color-darkmode-dark-dimmer) 60%,
         var(--color-darkmode-light-dimmer) 100%
-        ) !important;
-    text-color: var(--color-darkmode-text-dark) !important;
+      ) !important;
+      text-color: var(--color-darkmode-text-dark) !important;
+    }
   }
-}
 
   @media (max-width: 768px) {
     .services-card {
       width: 300px;
       height: 360px;
     }
-    
+
     .services-carousel-container {
       height: 400px;
     }
@@ -414,7 +425,7 @@ const servicesArray = services || [];
 
     function updateCarousel(newIndex: number) {
       if (isAnimating) return;
-      
+
       isAnimating = true;
       currentIndex = (newIndex + cards.length) % cards.length;
 
@@ -432,14 +443,14 @@ const servicesArray = services || [];
           cards.forEach((card, i) => {
             const cardElement = card as HTMLElement;
             const offset = (i - currentIndex + cards.length) % cards.length;
-            
+
             cardElement.classList.remove(
               "center",
               "left-1",
               "left-2",
               "right-1",
               "right-2",
-              "hidden"
+              "hidden",
             );
 
             if (offset === 0) {
@@ -509,23 +520,23 @@ const servicesArray = services || [];
       track.addEventListener("click", (e) => {
         // Don't navigate if clicking on a link/button
         const target = e.target as HTMLElement;
-        if (target.closest('a, button')) {
+        if (target.closest("a, button")) {
           return;
         }
-        
+
         // Use elementsFromPoint to get all cards at the click position
         // This handles cases where the center card overlaps adjacent cards
         const clickX = (e as MouseEvent).clientX;
         const clickY = (e as MouseEvent).clientY;
         const elementsAtPoint = document.elementsFromPoint(clickX, clickY);
-        
+
         // Find all service cards at this point (could be multiple due to overlap)
-        const cardsAtPoint = Array.from(elementsAtPoint).filter((el) => 
-          el.classList.contains("services-card")
+        const cardsAtPoint = Array.from(elementsAtPoint).filter((el) =>
+          el.classList.contains("services-card"),
         ) as HTMLElement[];
-        
+
         if (cardsAtPoint.length === 0) return;
-        
+
         // If multiple cards overlap, prefer the non-center card for navigation
         // Otherwise use the topmost card
         let clickedCard = cardsAtPoint[0];
@@ -535,10 +546,12 @@ const servicesArray = services || [];
             break;
           }
         }
-        
-        const cardIndex = parseInt(clickedCard.getAttribute("data-index") || "0");
+
+        const cardIndex = parseInt(
+          clickedCard.getAttribute("data-index") || "0",
+        );
         const offset = (cardIndex - currentIndex + cards.length) % cards.length;
-        
+
         // If it's the center card, navigate to the service page
         if (offset === 0) {
           const serviceUrl = clickedCard.getAttribute("data-service-url");
@@ -547,31 +560,31 @@ const servicesArray = services || [];
           }
           return;
         }
-        
+
         // If card is on the left side, navigate left
         if (offset > cards.length / 2) {
           updateCarousel(currentIndex - 1);
-        } 
+        }
         // If card is on the right side, navigate right
         else {
           updateCarousel(currentIndex + 1);
         }
       });
     }
-    
+
     // Touch/swipe support for mobile
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
     const minSwipeDistance = 50; // Minimum distance in pixels to trigger a swipe
-    
+
     function handleSwipe() {
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
       const absDeltaX = Math.abs(deltaX);
       const absDeltaY = Math.abs(deltaY);
-      
+
       // Only trigger if horizontal swipe is greater than vertical (to avoid conflicts with scrolling)
       if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
         if (deltaX > 0) {
@@ -583,27 +596,39 @@ const servicesArray = services || [];
         }
       }
     }
-    
-    const carouselContainer = document.querySelector(".services-carousel-container");
-    
+
+    const carouselContainer = document.querySelector(
+      ".services-carousel-container",
+    );
+
     if (carouselContainer) {
-      carouselContainer.addEventListener("touchstart", (e) => {
-        const touchEvent = e as TouchEvent;
-        touchStartX = touchEvent.changedTouches[0].screenX;
-        touchStartY = touchEvent.changedTouches[0].screenY;
-      }, { passive: true });
-      
-      carouselContainer.addEventListener("touchend", (e) => {
-        const touchEvent = e as TouchEvent;
-        touchEndX = touchEvent.changedTouches[0].screenX;
-        touchEndY = touchEvent.changedTouches[0].screenY;
-        handleSwipe();
-      }, { passive: true });
+      carouselContainer.addEventListener(
+        "touchstart",
+        (e) => {
+          const touchEvent = e as TouchEvent;
+          touchStartX = touchEvent.changedTouches[0].screenX;
+          touchStartY = touchEvent.changedTouches[0].screenY;
+        },
+        { passive: true },
+      );
+
+      carouselContainer.addEventListener(
+        "touchend",
+        (e) => {
+          const touchEvent = e as TouchEvent;
+          touchEndX = touchEvent.changedTouches[0].screenX;
+          touchEndY = touchEvent.changedTouches[0].screenY;
+          handleSwipe();
+        },
+        { passive: true },
+      );
     }
 
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
-      const carouselContainer = document.querySelector(".services-carousel-container");
+      const carouselContainer = document.querySelector(
+        ".services-carousel-container",
+      );
       if (!carouselContainer) return;
 
       // Check if carousel is in viewport
