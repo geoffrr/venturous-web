@@ -1,41 +1,37 @@
 import js from "@eslint/js";
 import astro from "eslint-plugin-astro";
 import prettier from "eslint-config-prettier";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsparser from "@typescript-eslint/parser";
 
 export default [
-  // Recommended JavaScript rules (minimal, catches real issues)
+  // Recommended JavaScript rules
   js.configs.recommended,
-
-  // Astro plugin configuration
+  // Astro plugin configuration (handles parsing for .astro files automatically)
   ...astro.configs.recommended,
-
-  // Global ignores
+  // Prettier config (disables conflicting ESLint rules)
+  prettier,
   {
-    ignores: [
-      "dist/**",
-      "node_modules/**",
-      ".astro/**",
-      "*.config.js",
-      "*.config.mjs",
-    ],
-  },
-
-  // JavaScript/TypeScript files
-  {
-    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+    files: ["**/*.{js,mjs,cjs}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
       globals: {
         console: "readonly",
-        process: "readonly",
-        Buffer: "readonly",
-        __dirname: "readonly",
-        __filename: "readonly",
+        document: "readonly",
+        window: "readonly",
+        HTMLElement: "readonly",
+        HTMLAnchorElement: "readonly",
+        HTMLInputElement: "readonly",
+        SVGSVGElement: "readonly",
+        NodeListOf: "readonly",
+        EventTarget: "readonly",
+        navigator: "readonly",
+        performance: "readonly",
       },
     },
     rules: {
-      // Helpful but not annoying rules
+      "no-console": "warn",
       "no-unused-vars": [
         "warn",
         {
@@ -43,34 +39,73 @@ export default [
           varsIgnorePattern: "^_",
         },
       ],
-      "no-console": "off", // Allow console.log in development
-      "no-debugger": "warn",
-      "no-duplicate-imports": "warn",
-      "no-unreachable": "warn",
+      "no-undef": "error",
       "prefer-const": "warn",
-      "no-var": "warn",
     },
   },
-
-  // Astro files
   {
-    files: ["**/*.astro"],
+    files: ["**/*.{ts,tsx}"],
     languageOptions: {
-      parser: astro.parser,
+      parser: tsparser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        console: "readonly",
+        document: "readonly",
+        window: "readonly",
+        HTMLElement: "readonly",
+        HTMLAnchorElement: "readonly",
+        HTMLInputElement: "readonly",
+        SVGSVGElement: "readonly",
+        NodeListOf: "readonly",
+        EventTarget: "readonly",
+        navigator: "readonly",
+        performance: "readonly",
+      },
       parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
     rules: {
-      // Astro-specific rules
-      "astro/no-conflict-set-directives": "error",
-      "astro/no-unused-define-vars-in-style": "warn",
-      // Disable some rules that are too strict for Astro
-      "no-unused-vars": "off", // TypeScript handles this better
+      "no-console": "warn",
+      "no-unused-vars": "off", // Turn off base rule
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+      "prefer-const": "warn",
     },
   },
-
-  // Prettier integration (disables conflicting rules)
-  prettier,
+  {
+    files: ["**/*.astro"],
+    rules: {
+      "no-console": "warn",
+      "no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+    },
+  },
+  {
+    // Ignore common directories
+    ignores: [
+      "node_modules/**",
+      "dist/**",
+      ".astro/**",
+      "public/**",
+      "scripts/**",
+      "**/*.d.ts", // Ignore type definition files
+    ],
+  },
 ];

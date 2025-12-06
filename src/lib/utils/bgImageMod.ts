@@ -10,7 +10,7 @@ const bgImageMod = async (
   // Check if the source path is valid
   if (!src || !images[src]) {
     console.error(
-      `\x1b[31mImage not found - ${src}.\x1b[0m Make sure the image is in the /public/images folder.`,
+      `Image not found - ${src}. Make sure the image is in the /public/images folder.`,
     );
 
     return ""; // Return an empty string if the image is not found
@@ -22,6 +22,7 @@ const bgImageMod = async (
       const imageData = (await images[image]()) as any;
       return imageData;
     } catch (error) {
+      console.error(error);
       return `Image not found - ${src}. Make sure the image is in the /public/images folder.`;
     }
   };

@@ -5,7 +5,6 @@ import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import ContactCard from "@/layouts/components/ContactCard.astro";
 
 const contactIndex = await getListPage("contact", "-index");
-const { contact_form_action }: { contact_form_action: string } = config.params;
 const { title, description, meta_title, image } = contactIndex.data;
 
 if (contactIndex.data.draft) {

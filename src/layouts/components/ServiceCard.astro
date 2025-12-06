@@ -1,23 +1,14 @@
 ---
 import config from "@/config/config.json";
-import dateFormat from "@/lib/utils/dateFormat";
 import {
-  humanize,
-  plainify,
-  slugify,
   markdownify,
 } from "@/lib/utils/textConverter";
-import { FaRegFolder } from "react-icons/fa";
 import ImageMod from "./ImageMod.astro";
 
-const { summary_length }: { summary_length: number } = config.settings;
 const { data } = Astro.props;
 const {
   title,
   image,
-  date,
-  categories,
-  teaser,
   "short-content": shortContent,
 } = data.data;
 const serviceUrl = `/services/${data.id}`;
