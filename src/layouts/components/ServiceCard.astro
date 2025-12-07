@@ -1,16 +1,10 @@
 ---
 import config from "@/config/config.json";
-import {
-  markdownify,
-} from "@/lib/utils/textConverter";
+import { markdownify } from "@/lib/utils/textConverter";
 import ImageMod from "./ImageMod.astro";
 
 const { data } = Astro.props;
-const {
-  title,
-  image,
-  "short-content": shortContent,
-} = data.data;
+const { title, image, "short-content": shortContent } = data.data;
 const serviceUrl = `/services/${data.id}`;
 ---
 
