@@ -80,13 +80,13 @@ const pagesCollection = defineCollection({
   }),
 });
 
-// about collection schema
-const aboutCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/about" }),
-  schema: z.object({
-    ...commonFields,
-  }),
-});
+// // about collection schema
+// const aboutCollection = defineCollection({
+//   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/about" }),
+//   schema: z.object({
+//     ...commonFields,
+//   }),
+// });
 
 // contact collection schema
 const contactCollection = defineCollection({
@@ -196,7 +196,7 @@ export const collections = {
   articles: articlesCollection,
   team: teamCollection,
   pages: pagesCollection,
-  about: aboutCollection,
+  // about: aboutCollection,
   contact: contactCollection,
   services: servicesCollection,
 
