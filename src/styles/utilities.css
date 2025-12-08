@@ -1,5 +1,9 @@
 @utility bg-gradient {
-  @apply bg-linear-to-b from-primary-dimmer to-body dark:from-darkmode-light dark:to-darkmode-body;
+  @apply bg-linear-to-b from-primary-dimmer to-body dark:from-darkmode-light-dim dark:to-darkmode-body;
+}
+
+@utility bg-gradient-secondary {
+  @apply bg-linear-to-b from-light-dimmer to-body dark:from-darkmode-primary-dimmer dark:to-darkmode-body;
 }
 
 /* form style */

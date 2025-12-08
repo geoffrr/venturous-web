@@ -185,6 +185,38 @@ const { title, meta_title, description, image, noindex, canonical } =
       }`}
     />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- JSON-LD Schema Markup -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: config.site.author || "Venturous Technology Ltd.",
+        url: config.site.base_url,
+        logo: `${config.site.base_url}${config.site.logo}`,
+        description: config.metadata.meta_description,
+        sameAs: [],
+      })}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: config.site.title,
+        url: config.site.base_url,
+        description: config.metadata.meta_description,
+        publisher: {
+          "@type": "Organization",
+          name: config.site.author || "Venturous Technology Ltd.",
+          logo: {
+            "@type": "ImageObject",
+            url: `${config.site.base_url}${config.site.logo}`,
+          },
+        },
+      })}
+    />
   </head>
   <body>
     {/* google tag manager noscript */}

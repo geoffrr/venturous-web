@@ -13,7 +13,7 @@ banner:
 features:
   - title: "What we can do for you"
     image: "/images/web_placeholder_1.png"
-    content: "Venturous Technology is a comprehensive partner offering the technical solutions your Healthcare, Legal, Accounting or other business needs to thrive. Instead of multiple vendors, having a single integrated service partner and bundled enterprise-grade solutions packages maximises your benefit with minimal over-head. Here's how we can help:"
+    content: "Venturous Technology is a comprehensive partner offering the technical solutions your healthcare, legal, accounting, or other business needs to thrive. Instead of multiple vendors, having a single integrated service partner and bundled enterprise-grade solutions packages maximises your benefit with minimal overhead. Here's how we can help:"
     bulletpoints:
       - "Infrastructure **IT support** (cloud, on-premise, and hybrid)"
       - "Enterprise-grade **Cybersecurity**"
@@ -25,30 +25,18 @@ features:
     button:
       enable: false
       label: "Get Started Now"
-      link: "#"
+      link: "https://venturoustech.com/contact"
 
-  # - title: "Discover the Key Features Of Astro"
-  #   image: "/images/service-2.png"
-  #   content: "Astro is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-  #   bulletpoints:
-  #     - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-  #     - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-  #     - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-  #   button:
-  #     enable: true
-  #     label: "Let's chat!"
-  #     link: "https://contact.venturoustech.com"
-
-  # - title: "The Top Reasons to Choose Astro for Your Next Project"
-  #   image: "/images/service-3.png"
-  #   content: "With Astro, you can build modern and content-focused websites without sacrificing performance or ease of use."
-  #   bulletpoints:
-  #     - "Instantly load static sites for better user experience and SEO."
-  #     - "Intuitive syntax and support for popular frameworks make learning and using Astro a breeze."
-  #     - "Use any front-end library or framework, or build custom components, for any project size."
-  #     - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
-  #   button:
-  #     enable: false
-  #     label: ""
-  #     link: ""
+  - title: "Secure solutions for ***compliance-critical*** business"
+    content: "Venturous Technology is a group of partners and associates trained and practiced in security and compliance-critical domains, including healthcare, law, finance and national defence. We refined our years of experience and proven domain solutions into accessible packages for small and medium-sized businesses looking for safety, security, and a competitive edge. Here's how:"
+    bulletpoints:
+      - "**Best Practice, by Default:** Let us share our proven **policies and procedures** with you, or refine your existing standards of practice."
+      - "**Convention _and_ Configuration:** Our solution, application and policy **templates** assume industry best practice as a convention, and use templates and **customization** to meet your unique needs."
+      - "**Deep domain experience:** We are experts in privacy (**PIPEDA**, **GDPR**), **security**, healthcare (**GCP**, **HC**, **HIPAA**), and financial regulation (**PCI DSS**, **ISO 27001**)."
+      - "**Engineered Availability:** You shouldn't need to be an expert in availability, reliability and uptime. Let us help define and architect your Service Level Agreements (**SLA**), Service Level Objectives (**SLO**), and infrastructure **architecture**."
+      - "**Affordable, World-Class Infrastructure:** We're multi-cloud **infrastructure experts**. We understand scale, cost and performance trade-offs and can help you deploy the right solutions, at the right scale, and the **most effective cost**."
+    button:
+      enable: false
+      label: "Let's chat!"
+      link: "https://venturoustech.com/contact"
 ---

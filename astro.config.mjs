@@ -18,7 +18,12 @@ export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        // Exclude categories pages from sitemap
+        return !page.includes("/categories/");
+      },
+    }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",

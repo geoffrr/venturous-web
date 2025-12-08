@@ -1,6 +1,7 @@
 {
   "site": {
-    "title": "Venturous Technology",
+    "title": "IT, AI, and App Development experts | Venturous Technology",
+    "author": "Venturous Technology Ltd.",
     "base_url": "https://venturoustech.com",
     "base_path": "/",
     "trailing_slash": false,
