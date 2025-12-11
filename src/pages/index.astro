@@ -132,7 +132,7 @@ const { banner, features } = homepage.data;
                   </ul>
                 </div>
               ) : (
-                <ul class="pl-2 lg:pl-6 lg:col-6">
+                <ul class="pl-2 lg:pl-6">
                   {feature.bulletpoints.map((bullet: string) => (
                     <li class="relative mb-4 pl-0 items-center justify-center">
                       <MdOutlineDoubleArrow className="inline-block pl-0 text-primary text-lg" />
@@ -142,7 +142,10 @@ const { banner, features } = homepage.data;
                 </ul>
               )}
               {feature.button.enable && (
-                <a class="btn btn-primary mt-5" href={feature.button.link}>
+                <a
+                  class="btn btn-primary mt-5 px-12"
+                  href={feature.button.link}
+                >
                   {feature.button.label}
                 </a>
               )}
