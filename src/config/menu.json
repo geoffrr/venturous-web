@@ -38,6 +38,10 @@
     {
       "name": "Team",
       "url": "/team"
+    },
+    {
+      "name": "Articles",
+      "url": "/articles"
     }
   ],
   "footer": [
