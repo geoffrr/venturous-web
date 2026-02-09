@@ -44,12 +44,12 @@
   },
 
   "google_tag_manager": {
-    "enable": false,
-    "gtm_id": "GTM-W8RSH5PL"
+    "enable": true,
+    "gtm_id": "AW-17807223704"
   },
 
   "disqus": {
-    "enable": true,
+    "enable": false,
     "shortname": "venturoustech-website",
     "settings": {}
   },
