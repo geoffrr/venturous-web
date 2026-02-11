@@ -14,10 +14,10 @@
 
 /* social icons */
 .social-icons {
-  @apply space-x-4;
+  @apply flex flex-wrap gap-3;
 }
 .social-icons li {
-  @apply inline-block;
+  @apply block;
 }
 .social-icons li a {
   @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-white;
@@ -446,6 +446,14 @@ main#main-content::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.tag {
+  @apply m-1 block bg-primary/40 px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-primary/40 dark:hover:bg-darkmode-primary dark:hover:text-text-dark
+}
+
+.tag-white {
+  @apply m-1 block bg-white/40 px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body/40 dark:hover:bg-darkmode-primary dark:hover:text-text-dark
 }
 
 /* content style */

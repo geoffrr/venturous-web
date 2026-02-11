@@ -14,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-secondary font-bold leading-tight text-text-dark dark:text-darkmode-text-dark;
+  @apply font-secondary font-semibold text-text-dark dark:text-darkmode-text-dark;
 }
 
 h1,
@@ -24,7 +24,32 @@ h1,
 
 h2,
 .h2 {
-  @apply text-h2-sm md:text-h2;
+  @apply text-h2-sm py-0 my-6 mb-6! mt-8! font-medium! md:text-h2;
+  position: relative;
+  padding-left: 1rem;
+}
+
+h2::before,
+.h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 5px;
+  background: linear-gradient(to bottom, theme('colors.light'), theme('colors.primary'));
+}
+
+:is(.dark h2)::before,
+:is(.dark .h2)::before {
+  background: linear-gradient(to bottom, theme('colors.darkmode.light'), theme('colors.darkmode.primary'));
+}
+
+@media (min-width: 768px) {
+  h2::before,
+  .h2::before {
+    width: 6px;
+  }
 }
 
 h3,
@@ -62,4 +87,18 @@ blockquote > p {
 
 button {
   @apply cursor-pointer;
+}
+
+.content ul {
+  @apply list-none pl-0;
+}
+.content ul li {
+  @apply relative pl-5 list-none;
+}
+.content ul li::before {
+  content: '»';
+  @apply inline-block mr-2 text-light;
+}
+.dark .content ul li::before {
+  @apply text-darkmode-light;
 }
