@@ -1,6 +1,6 @@
 ---
-title: "Defense in Depth: The Technical Tier of our cybersecurity solutions for your business"
-meta_title: "Technical Defense in Depth for SMB Cybersecurity | Venturous Technology"
+title: "Defense in Depth: Technical Tier for SMB cybersecurity"
+meta_title: "SMB Cybersecurity: Technical Safeguards | Venturous Technology"
 description: "A practical guide to the Technical Tier of Defense in Depth — firewalls, endpoint protection, authentication, password management, and data security for small and medium businesses."
 date: 2025-12-18T13:25:12Z
 image: "/images/articles/Defense in Depth - Technical Safeguards.png"
